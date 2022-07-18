@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Employeewage5
+{
+    internal class wage5
+    {
+        public static void Empwage5()
+        {
+            int fullTime = 1;
+            int partTime = 2;
+            int empHr = 0;
+            int empWage = 0;
+            int wagePerHR = 20;
+            int totalWorkingdays = 20;
+            int totalWage = 0;
+            for (int i = 0; i < totalWorkingdays; i++)
+            {
+                Random random = new Random();
+                int attendCheck = random.Next(0, 3);
+                if (attendCheck == fullTime)
+                {
+                    empHr = 8;
+                    Console.WriteLine($"Full time employee");
+                }
+                else if (attendCheck == partTime)
+                {
+                    empHr = 4;
+                    Console.WriteLine("Part time employee");
+                }
+                else
+                {
+                    empHr = 0;
+                    Console.WriteLine("The employee is absent");
+                }
+                empWage = empHr * wagePerHR;
+                Console.WriteLine("Employee wage is : " +empWage);
+                totalWage = totalWage + empWage;
+            }
+            Console.WriteLine("Total wage for 20 working days is  "  +totalWage);
+        }
+    }
+}
